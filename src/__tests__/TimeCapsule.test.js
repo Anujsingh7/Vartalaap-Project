@@ -3,7 +3,7 @@ import {StaticRouter} from "react-router-dom/server"
 
 import TimeCapsule from "../components/TimeCapsule";
 
-test("test the footer page",()=>{
+test("test TimeCapsule component",()=>{
 
     const Render=render(
     <StaticRouter>

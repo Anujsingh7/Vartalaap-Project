@@ -17,12 +17,14 @@ const Notes = () => {
       console.error("Error fetching notes:", error);
     });
   }, []);
-  console.log("nodsfi");
-  if (notes) console.log(notes);
-
+ 
+  // if (notes.length===0) 
+  //   return ;
+     
   return (
     <>
       <ShowNotes MenuData={notes}/>
+
     </>
   );
 };

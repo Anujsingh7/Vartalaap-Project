@@ -1,12 +1,14 @@
 import { render } from "@testing-library/react"
-import {StaticRouter} from "react-router-dom/server"
-import SocialNavbar from "../components/SocialNavbar";
 
-test("test SocialNavbar component",()=>{
+import {StaticRouter} from "react-router-dom/server"
+
+import ShowNotes from "../components/ShowNotes";
+
+test("test ShowNotes component",()=>{
 
     const Render=render(
     <StaticRouter>
-       <SocialNavbar/>
+       <ShowNotes/>
     </StaticRouter>)
     // console.log(Render);
 })

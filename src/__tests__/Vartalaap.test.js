@@ -3,7 +3,7 @@ import {StaticRouter} from "react-router-dom/server"
 
 import About from "../components/Vartalaap";
 
-test("test the footer page",()=>{
+test("test About component",()=>{
 
     const Render=render(
     <StaticRouter>

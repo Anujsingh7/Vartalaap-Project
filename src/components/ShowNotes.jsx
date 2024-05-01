@@ -1,7 +1,6 @@
 import { useState } from "react";
 import '../assets/style.css'
 import Shimmer from './Shimmer'
-import { useFirebase } from "../context/firebase";
 import NotesCard from './NotesCard'
 // import MenuData from "./SubjectsApi";
 
@@ -12,10 +11,10 @@ const ShowNotes = ({ MenuData }) => {
 
     // console.log(MenuData);
     // Assuming you have cardData defined somewhere
-    const filteredCardData = MenuData.filter((card) => {
+    const filteredCardData = MenuData ? MenuData.filter((card) => {
         // Filter based on selected branch
         return selectedCategory === "" ? card : card.branch === selectedCategory;
-    });
+    }):[];
     const filterData = filteredCardData.filter((card) => {
         // Filter based on selected semester
         return selectedSemester === "" ? card : card.semester === selectedSemester;
@@ -68,11 +67,11 @@ const ShowNotes = ({ MenuData }) => {
                     </div>
                 </div>
 
-                {MenuData.length !== 0 && filterData.length === 0 ? (
+                {MenuData && MenuData.length !== 0 && filterData.length === 0 ? (
                     <div className="notes_not_found">Sorry! Notes Not Found</div>
                 ) : (
                     <div className="wholes">
-                        {MenuData.length === 0 ? (
+                        {MenuData && MenuData.length === 0 ? (
                             <>
                                 <Shimmer />
                                 <Shimmer />
